@@ -13,8 +13,8 @@ export default defineConfig({
     strictPort: true,
     allowedHosts: [
       'portfolio-project-production-e0cd.up.railway.app',
-      '.railway.app', // Allow all Railway subdomains
-      'mpark-se.quest', // Your custom domain
+      '.railway.app',
+      'mpark-se.quest',
       'www.mpark-se.quest'
     ]
   }

@@ -12,11 +12,12 @@ const app = express()
 const PORT = process.env.PORT || 3001
 app.use(express.json())
 
-// For production - Add railway URL as well as custom domain
+// For production - Add railway URL as well as custom domains
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://portfolio-project-production-e0cd.up.railway.app', 
-    'http://mpark-se.quest/' 
+    'https://portfolio-project-production-e0cd.up.railway.app',
+    'https://mpark-se.quest',
+    'https://www.mpark-se.quest'
 ];
 
 app.use(cors({
@@ -29,6 +30,10 @@ app.use(cors({
     }
 }));
 
+// Test backend connection
+app.get('/test', (req, res) => {
+    res.json({ message: 'Backend is working!', env: process.env.NODE_ENV });
+})
 // Test database connection
 pool.query('SELECT NOW()', (err, res) => {
     if (err) {
@@ -37,11 +42,6 @@ pool.query('SELECT NOW()', (err, res) => {
         console.log('Connected to PostgreSQL database at:', res.rows[0].now);
     }
 });
-
-// Test
-app.get('/test', (req, res) => {
-    res.json({ message: 'Backend is working!', env: process.env.NODE_ENV });
-})
 
 // Routes
 app.post('/create-checkout-session/:planType', createCheckoutSession);

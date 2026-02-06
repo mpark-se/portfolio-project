@@ -15,49 +15,14 @@ const ShoppingCart = () => {
     // Stripe POST function
     const [selectedPlan, setSelectedPlan] = useState(null);
     
-    // const fetchClientSecret = useCallback((sessionUrl) => {
-    //     return fetch(`${import.meta.env.VITE_API_URL}${sessionUrl}`, {
-    //         method: "POST",
-    //     })
-    //         .then((res) => res.json())
-    //         .then((data) => data.clientSecret);
-    // }, []);
     const fetchClientSecret = useCallback((sessionUrl) => {
-        const fullUrl = `${import.meta.env.VITE_API_URL}${sessionUrl}`;
-
-        console.log('=== FETCH DEBUG ===');
-        console.log('Full URL:', fullUrl);
-        console.log('Method: POST');
-
-        return fetch(fullUrl, {
+        return fetch(`${import.meta.env.VITE_API_URL}${sessionUrl}`, {
             method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-            }
         })
-            .then((res) => {
-                console.log('Response status:', res.status);
-                console.log('Response ok?:', res.ok);
-
-                if (!res.ok) {
-                    return res.text().then(text => {
-                        console.error('Error response body:', text);
-                        throw new Error(`HTTP ${res.status}: ${text}`);
-                    });
-                }
-                return res.json();
-            })
-            .then((data) => {
-                console.log('Success! Data received:', data);
-                return data.clientSecret;
-            })
-            .catch((error) => {
-                console.error('=== FETCH FAILED ===');
-                console.error('Error:', error);
-                throw error;
-            });
+            .then((res) => res.json())
+            .then((data) => data.clientSecret);
     }, []);
-    
+
     // Cal.com integration
     useEffect(() => {
         (async function () {
