@@ -11,8 +11,7 @@ import Footer from "../footer/index.jsx";
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 const ShoppingCart = () => {
-
-    // TODO add this pre/post checkout
+    
     // Stripe POST function
     const [selectedPlan, setSelectedPlan] = useState(null);
     
