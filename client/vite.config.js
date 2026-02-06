@@ -2,6 +2,20 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
 // https://vite.dev/config/
+// export default defineConfig({
+//   plugins: [react()],
+// })
 export default defineConfig({
   plugins: [react()],
+  preview: {
+    port: 4173,
+    host: '0.0.0.0',
+    strictPort: true,
+    allowedHosts: [
+      'portfolio-project-production-e0cd.up.railway.app',
+      '.railway.app', // Allow all Railway subdomains
+      'mpark-se.quest', // Your custom domain
+      'www.mpark-se.quest'
+    ]
+  }
 })
