@@ -22,18 +22,14 @@ const allowedOrigins = [
     'http://mpark-se.quest/' 
 ];
 
-// app.use(cors({
-//     origin: function(origin, callback) {
-//         if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-//             callback(null, true);
-//         } else {
-//             callback(new Error('Not allowed by CORS'));
-//         }
-//     }
-// }));
 app.use(cors({
-    origin: '*', // Allow all origins (for testing only!)
-    credentials: true
+    origin: function(origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
 }));
 
 // Test database connection
