@@ -34,6 +34,14 @@ const ShoppingCart = () => {
             }
         })();
     }, []);
+    useEffect(() => {
+        console.log('API URL:', import.meta.env.VITE_API_URL);
+        console.log('Stripe Key:', import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+
+        if (!import.meta.env.VITE_API_URL) {
+            alert('ERROR: Environment variables not loaded!');
+        }
+    }, []);
     const lessons = [
         {
             id: 1,
