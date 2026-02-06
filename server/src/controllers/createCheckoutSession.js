@@ -34,6 +34,7 @@ export const createCheckoutSession = async (req, res) => {
     }
 
     try {
+        const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
         const session = await stripe.checkout.sessions.create({
             line_items: [{
                 price_data: {
