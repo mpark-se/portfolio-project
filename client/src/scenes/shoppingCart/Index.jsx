@@ -16,14 +16,49 @@ const ShoppingCart = () => {
     // Stripe POST function
     const [selectedPlan, setSelectedPlan] = useState(null);
     
+    // const fetchClientSecret = useCallback((sessionUrl) => {
+    //     return fetch(`${import.meta.env.VITE_API_URL}${sessionUrl}`, {
+    //         method: "POST",
+    //     })
+    //         .then((res) => res.json())
+    //         .then((data) => data.clientSecret);
+    // }, []);
     const fetchClientSecret = useCallback((sessionUrl) => {
-        return fetch(`${import.meta.env.VITE_API_URL}${sessionUrl}`, {
-            method: "POST",
-        })
-            .then((res) => res.json())
-            .then((data) => data.clientSecret);
-    }, []);
+        const fullUrl = `${import.meta.env.VITE_API_URL}${sessionUrl}`;
 
+        console.log('=== FETCH DEBUG ===');
+        console.log('Full URL:', fullUrl);
+        console.log('Method: POST');
+
+        return fetch(fullUrl, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+            .then((res) => {
+                console.log('Response status:', res.status);
+                console.log('Response ok?:', res.ok);
+
+                if (!res.ok) {
+                    return res.text().then(text => {
+                        console.error('Error response body:', text);
+                        throw new Error(`HTTP ${res.status}: ${text}`);
+                    });
+                }
+                return res.json();
+            })
+            .then((data) => {
+                console.log('Success! Data received:', data);
+                return data.clientSecret;
+            })
+            .catch((error) => {
+                console.error('=== FETCH FAILED ===');
+                console.error('Error:', error);
+                throw error;
+            });
+    }, []);
+    
     // Cal.com integration
     useEffect(() => {
         (async function () {
@@ -34,14 +69,7 @@ const ShoppingCart = () => {
             }
         })();
     }, []);
-    useEffect(() => {
-        console.log('API URL:', import.meta.env.VITE_API_URL);
-        console.log('Stripe Key:', import.meta.env.VITE_STRIPE_PUBLIC_KEY);
-
-        if (!import.meta.env.VITE_API_URL) {
-            alert('ERROR: Environment variables not loaded!');
-        }
-    }, []);
+    
     const lessons = [
         {
             id: 1,
