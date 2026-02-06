@@ -18,7 +18,7 @@ app.use(cors({
 // For production - Add railway URL as well as custom domain
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://your-frontend.up.railway.app', 
+    'https://portfolio-project-production-e0cd.up.railway.app', 
     'http://mpark-se.quest/' 
 ];
 
