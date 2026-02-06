@@ -41,6 +41,11 @@ pool.query('SELECT NOW()', (err, res) => {
     }
 });
 
+// Test
+app.get('/test', (req, res) => {
+    res.json({ message: 'Backend is working!', env: process.env.NODE_ENV });
+})
+
 // Routes
 app.post('/create-checkout-session/:planType', createCheckoutSession);
 app.post('/subscribe-newsletter', newsletter)
