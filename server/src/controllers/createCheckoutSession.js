@@ -22,7 +22,7 @@ export const createCheckoutSession = async (req, res) => {
         },
         '1m': {
             name: '1 Hour Lesson Monthly',
-            amount: 24000,
+            amount: 20000,
             interval: 'month'
         }
     };
