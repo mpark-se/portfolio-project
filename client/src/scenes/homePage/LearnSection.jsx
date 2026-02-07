@@ -15,7 +15,7 @@ const LearnSections = () => {
                     <div className="col-md p-5">
                         <h2><span className="text-warning">About Me</span></h2>
                         <p className="lead">
-                            Doctoral-Candidate classNameical Musician & Software Developer
+                            Doctoral-Candidate classical Musician & Software Developer
                         </p>
                         <p>A concert pianist pivoting to software engineer, aspiring and highly motivated
                             with a problem-solver mindset. Hardworking and passionate, dedicated to 

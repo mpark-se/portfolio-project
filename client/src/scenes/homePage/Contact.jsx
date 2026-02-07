@@ -21,7 +21,7 @@ const Contact = () => {
                             819-593-9283
                         </li>
                         <li className="list-group-item">
-                            mpark1994@outlook.com
+                            mpark-se@outlook.com
                         </li>
                     </ul>
                 </div>
