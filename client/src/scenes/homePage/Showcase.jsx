@@ -12,7 +12,8 @@ const Showcase = () => {
                     <div>
                         <h1 className="text-center"><span className="text-warning">Min Key Park</span></h1>
                         <p className="lead my-6 text-center">Musician & Software Developer</p>
-                        <p> &#8203 </p>
+                        {/*<p> &#8203 </p>*/}
+                        <p></p>
                         <div className="text-center">
                             &rdquo;Information is liberating.
                             <br />Education is the premise of progress in
