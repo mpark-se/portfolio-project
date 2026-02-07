@@ -15,7 +15,7 @@ const LearnSections = () => {
                     <div className="col-md p-5">
                         <h2><span className="text-warning">About Me</span></h2>
                         <p className="lead">
-                            Doctoral-Candidate classical Musician & Software Developer
+                            Doctoral-Candidate Classical Musician & Software Developer
                         </p>
                         <p>A concert pianist pivoting to software engineer, aspiring and highly motivated
                             with a problem-solver mindset. Hardworking and passionate, dedicated to 
@@ -38,7 +38,7 @@ const LearnSections = () => {
                             Fluency in Python, JavaScript
                         </p>
                         <p className="lead">
-                            Experience with SQL, HTML, CSS, Kotlin, R, Lua
+                            Experience with SQL, React, Kotlin, R, Lua
                         </p>
                         <p>Django Web, Flask, React, React Native, Angular, Git, Git Bash, Linux, Unix, AWS Cloud, REST API, CI/CD, Unit Testing, Lambda, OOP, Visual Studio, Android Studio, Frontend, Backend, Full-Stack, UX/UI, Data Analytics, Tableau, Spreadsheets</p>
                         <a href="https://docs.google.com/document/d/1TwcyAOIyJeFz1e76eAOk-asdU6K1GtIK4nkBGFed2BA/edit?usp=sharing" target="blank" className="btn btn-dark mt-3">
