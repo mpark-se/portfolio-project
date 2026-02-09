@@ -56,7 +56,7 @@ const Navbar = () => {
                             <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="nav-link">Contact</a>
                         </li>
                         <li className="nav-item">
-                            <a href="/shoppingCart" onClick={(e) => { e.preventDefault(); navigate('/shoppingCart'); }} className="nav-link">Music-Enrolment</a>
+                            <a href="/musicEnrol" onClick={(e) => { e.preventDefault(); navigate('/musicEnrol'); }} className="nav-link">Music-Enrolment</a>
                         </li>
                     </ul>
                 </div>

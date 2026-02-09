@@ -17,7 +17,7 @@ const Return = () => {
         const sessionId = urlParams.get('session_id');
 
         if (!sessionId) {
-            navigate('/shoppingCart');
+            navigate('/musicEnrol');
             return;
         }
         
@@ -32,12 +32,12 @@ const Return = () => {
 
                 // Set 2 seconds to show confirmation to client before routing back
                 setTimeout(() => {
-                    navigate('/shoppingCart?success=true');
+                    navigate('/musicEnrol?success=true');
                 }, 2000);
             })
             .catch((err) => {
                 console.error('Error fetching session:', err);
-                navigate('/shoppingCart?canceled=true');
+                navigate('/musicEnrol?canceled=true');
             })
     }, [navigate]);
 

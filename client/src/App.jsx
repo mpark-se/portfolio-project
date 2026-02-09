@@ -13,8 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/shoppingCart' element={<ShoppingCart />} />
-            <Route path='/shoppingCart/return' element={<Return />} />
+            <Route path='/musicEnrol' element={<ShoppingCart />} />
+            <Route path='/musicEnrol/return' element={<Return />} />
         </Routes>
       </BrowserRouter>
     </div>

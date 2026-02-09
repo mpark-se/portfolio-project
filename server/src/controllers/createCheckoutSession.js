@@ -69,7 +69,7 @@ export const createCheckoutSession = async (req, res) => {
             metadata: {
                 plan_type: planType
             },
-            return_url: `${frontendUrl}/shoppingCart/return?session_id={CHECKOUT_SESSION_ID}`
+            return_url: `${frontendUrl}/musicEnrol/return?session_id={CHECKOUT_SESSION_ID}`
         });
 
         res.json({ clientSecret: session.client_secret });
