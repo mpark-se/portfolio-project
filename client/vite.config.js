@@ -17,5 +17,10 @@ export default defineConfig({
       'mpark-se.quest',
       'www.mpark-se.quest'
     ]
-  }
+  },
+  test: {
+    environment: 'happy-dom',
+    globals: true,
+    setupFiles: ['./src/setupTests.js'],
+  },
 })
