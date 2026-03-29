@@ -10,6 +10,60 @@ import Footer from "../footer/index.jsx";
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
+const lessons = [
+    {
+        id: 1,
+        image: "/assets/pexels-begum-31161748.jpg",
+        title: "Consultation",
+        namespace: "consultation",
+        description: "Take the first step in your musical journey, book a free consultation today!",
+    },
+    {
+        id: 2,
+        image: "/assets/pexels-eva-bronzini-6073196.jpg",
+        title: "30 Minute Lesson",
+        namespace: "30-minute-lesson",
+        description: "Book a 30-minute lesson with a one-time fee. No commitment required.",
+    },
+    {
+        id: 3,
+        image: "/assets/pexels-pixabay-210764.jpg",
+        title: "1 Hour Lesson",
+        namespace: "1-hour-lesson",
+        description: "Book an hour lesson with a one-time fee. No commitment required.",
+    }
+];
+const plans = [
+    {
+        id: 1,
+        icon: "bi bi-file-music-fill",
+        title: "30 Minute Lesson Weekly",
+        description: "$35.00",
+        checkout: "/create-checkout-session/30w",
+    },
+    {
+        id: 2,
+        icon: "bi bi-music-note",
+        title: "1 Hour Lesson Weekly",
+        description: "$55.00",
+        checkout: "/create-checkout-session/1w",
+    },
+    {
+        id: 3,
+        icon: "bi bi-music-note-beamed",
+        title: "30 Minute Lesson Monthly",
+        description: "$120.00",
+        checkout: "/create-checkout-session/30m",
+    },
+    {
+        id: 4,
+        icon: "bi bi-music-note-list",
+        title: "1 Hour Lesson Monthly",
+        description: "$200.00",
+        checkout: "/create-checkout-session/1m",
+    }
+];
+
 const ShoppingCart = () => {
     
     // Stripe POST function
@@ -33,60 +87,6 @@ const ShoppingCart = () => {
             }
         })();
     }, []);
-    
-    const lessons = [
-        {
-            id: 1,
-            image: "/assets/pexels-begum-31161748.jpg",
-            title: "Consultation",
-            namespace: "consultation",
-            description: "Take the first step in your musical journey, book a free consultation today!",
-        },
-        {
-            id: 2,
-            image: "/assets/pexels-eva-bronzini-6073196.jpg",
-            title: "30 Minute Lesson",
-            namespace: "30-minute-lesson",
-            description: "Book a 30-minute lesson with a one-time fee. No commitment required.",
-        },
-        {
-            id: 3,
-            image: "/assets/pexels-pixabay-210764.jpg",
-            title: "1 Hour Lesson",
-            namespace: "1-hour-lesson",
-            description: "Book an hour lesson with a one-time fee. No commitment required.",
-        }
-    ];
-    const plans = [
-        {
-            id: 1,
-            icon: "bi bi-file-music-fill",
-            title: "30 Minute Lesson Weekly",
-            description: "$35.00",
-            checkout: "/create-checkout-session/30w",
-        },
-        {
-            id: 2,
-            icon: "bi bi-music-note",
-            title: "1 Hour Lesson Weekly",
-            description: "$55.00",
-            checkout: "/create-checkout-session/1w",
-        },
-        {
-            id: 3,
-            icon: "bi bi-music-note-beamed",
-            title: "30 Minute Lesson Monthly",
-            description: "$120.00",
-            checkout: "/create-checkout-session/30m",
-        },
-        {
-            id: 4,
-            icon: "bi bi-music-note-list",
-            title: "1 Hour Lesson Monthly",
-            description: "$200.00",
-            checkout: "/create-checkout-session/1m",
-        }
-    ];
 
     
     return (
